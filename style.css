@@ -1,0 +1,316 @@
+:root {
+  --bg-color: #212121;
+  --text-color: rgb(177, 174, 174);
+  --accent-color: #0077ff;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: black;
+  color: var(--text-color);
+  scroll-behavior: smooth;
+}
+
+header {
+  background: var(--bg-color);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.toggle, .theme-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+}
+
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.hero .highlight {
+  color: rgb(247, 160, 175);
+}
+.hero-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  max-width: 1000px;
+}
+
+.hero-image img {
+  width: 280px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 20%;
+  box-shadow: 0 7px 10px rgb(247, 160, 175);
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 250px;
+}
+
+.btn {
+  background: var(--accent-color);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  text-decoration: none;
+  border-radius: 8px;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.about, .projects, .resume, .contact {
+  padding: 4rem 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+.about {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--bg-color);
+}
+
+.skills-flowchart {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 3rem 0;
+}
+
+.node {
+  background-color: rgb(210, 182, 187);
+  color: black;
+  padding: 1rem 1.8rem;
+  border-radius: 50px;
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.node:hover {
+  transform: scale(1.1);
+  background: pink;
+}
+
+.resume-btn {
+  margin-top: 2rem;
+  display: inline-block;
+  background: #111;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: 0.3s ease;
+  
+}
+
+.resume-btn:hover {
+  background: pink;
+  color: black;
+}
+
+.skills span {
+  display: inline-block;
+  margin: 0.25rem;
+  background: var(--accent-color);
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+/* Projects Section */
+.project-grid {
+  display: flex;
+  justify-content: center;   /* center all subsections */
+  align-items: stretch;      /* make all subsections equal height */
+  gap: 1.5rem;               /* spacing between subsections */
+  margin-top: 2rem;
+  flex-wrap: nowrap;         /* default: all in 1 row */
+}
+
+.project-subsection {
+  flex: 1;
+  max-width: 25%;            /* 3 subsections per row on big screens */
+  min-width: 260px;          /* don’t shrink too much */
+  background: #212121;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-subsection h3 {
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  color: rgb(196, 192, 192);
+}
+
+.project-card {
+  background: #323232;
+
+  margin: 0.8rem 0;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+  flex: 1;                          
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-card img {
+  width: 100%;
+  height: 150px;                     
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.project-card h4 {
+  margin: 0.5rem 0;
+  /* color: #222; */
+}
+
+.project-card p {
+  font-size: 0.9rem;
+  /* color: #666; */
+  flex-grow: 1;                      
+}
+
+.project-card a {
+  display: inline-block;
+  margin: 0.3rem;
+  color: pink;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.project-card a:hover {
+  text-decoration: underline;
+}
+
+/* 📱 Responsive design */
+@media (max-width: 1200px) {
+  .project-grid {
+    flex-wrap: wrap; /* allow wrapping */
+  }
+  .project-subsection {
+    max-width: 45%;  /* 2 subsections per row */
+  }
+}
+
+@media (max-width: 768px) {
+  .project-subsection {
+    max-width: 100%; /* 1 subsection per row */
+  }
+}
+
+
+.form{
+  color: #323232;
+}
+
+form input, form textarea {
+  background: #323232;
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+form button {
+  background-color: rgb(204, 181, 185);
+  color: black;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+form button:hover{
+  background: pink;
+}
+
+.socials {
+  margin-top: 20px;
+}
+
+.socials a {
+  font-size: 30px;
+  margin: 0 15px;
+  color: #333;  /* default color */
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.socials a:hover {
+  color: pink; /* LinkedIn blue */
+  transform: scale(1.2);
+}
+
+.socials a:nth-child(1):hover {
+  color: pink; /* GitHub stays black */
+}
+
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #323232;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: var(--bg-color);
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+  .nav-links.open {
+    display: flex;
+  }
+  .toggle {
+    display: block;
+  }
+}
